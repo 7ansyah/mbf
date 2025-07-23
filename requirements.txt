@@ -1,0 +1,7 @@
+transformers
+opencv-python
+tensorflow
+pandas
+ccxt
+beautifulsoup4
+flask

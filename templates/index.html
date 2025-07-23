@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading AI</title>
+</head>
+<body>
+    <h1>BTC/USDT Futures Trading AI</h1>
+    <form id="analysis-form" action="/analyze" method="post" enctype="multipart/form-data">
+        <label for="chart-screenshot">Upload Chart Screenshot:</label>
+        <input type="file" id="chart-screenshot" name="chart-screenshot" accept="image/*" required>
+        <br><br>
+        <label for="user-question">Question:</label>
+        <textarea id="user-question" name="user-question" rows="4" cols="50"></textarea>
+        <br><br>
+        <button type="submit" id="get-recommendation">Analyze!</button>
+    </form>
+    <hr>
+    <h2>Recommendation:</h2>
+    <pre id="recommendation-output"></pre>
+
+    <script>
+        document.getElementById('analysis-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch('/analyze', {
+                method: 'POST',
+                body: formData
+            });
+            const recommendation = await response.json();
+            document.getElementById('recommendation-output').textContent = JSON.stringify(recommendation, null, 2);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "strategies": [],
+    "learnings": [
+        {
+            "source": "Agent-Alpha",
+            "insight": "US inflation is currently high, which could lead to a decrease in BTC price."
+        },
+        {
+            "source": "Agent-Beta",
+            "insight": "The 4-hour BTC/USDT chart shows a bearish wedge pattern, suggesting a potential breakout to the downside."
+        }
+    ]
+}
